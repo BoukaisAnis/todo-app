@@ -1,0 +1,308 @@
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap");
+
+body {
+    background: hsl(0, 0%, 100%);
+    font-family: "Josefin Sans", serif;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    transition: background-color 0.3s ease, color 0.3s ease; 
+}
+
+.todo {
+    position: relative; 
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+}
+
+.todo.dark-mode {
+    color: white;
+}
+
+.todo img {
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 200px;
+    width: 100%;
+}
+
+.todo-header {
+    width: 450px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 20px auto;
+    margin-top: -15%;
+}
+
+.todo-header h1 {
+    color: white;
+    font-size: 2rem;
+    margin: 0;
+}
+
+.todo-header .darkmode {
+    cursor: pointer;
+}
+
+.input {
+    margin-left: 31%;
+    gap: 4px;
+    width: 500px;
+    display: flex;
+    align-items: center;
+    background: hsl(0, 0%, 98%);
+    border-radius: 8px;
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-top: 10px;
+}
+
+.add-btn{
+    background: hsl(240, 14%, 93%);
+    border: none;
+    border-radius: 5px;
+    padding: 8px 10px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: background 0.3s ease;
+}
+.add-btn:hover {
+    background: hsl(240, 24%, 80%);
+  }
+.dark-mode .add-btn{
+    background: hsl(235, 37%, 28%);
+    color: white
+
+  }
+.input-field {
+    height:50px;
+    flex: 1; /* Allow the input field to take up remaining space */
+    padding: 10px 50px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    color: rgb(0, 0, 0);
+    outline: none;
+    background: white;
+}
+
+.input-field::placeholder {
+    color: hsl(0, 0%, 50%);
+}
+
+.todo-list {
+    background: hsl(240, 14%, 93%);
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    list-style-type: none;
+    width: 480px;
+    border-radius: 8px;
+    margin-left: 30%;
+    margin-top: 8%;
+    padding: 0;
+}
+
+.list-item {
+    border-bottom: 1px solid rgb(224, 217, 217);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px;
+    margin-top: 10px;
+}
+
+.list-item:hover {
+    background: #e3e2e2;
+}
+
+.list-item .checkbox {
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    border: 2px solid rgb(93, 86, 86);
+    border-radius: 50%;
+    background: transparent;
+    cursor: pointer;
+    transition: background 0.3s ease, border-color 0.3s ease;
+}
+
+.list-item .checkbox:checked {
+    background: url(./images/icon-check.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    border-color: hsl(121, 100%, 50%);
+}
+
+.checked {
+    text-decoration: line-through;
+    color: rgb(81, 81, 81);
+}
+
+.item-text {
+    flex: 1;
+    font-size: 1rem;
+    color: rgb(0, 0, 0);
+}
+.dark-mode .input-field{
+    background: hsl(235, 24%, 19%);
+    color: white;
+
+}
+/* Dark Mode Styles */
+.dark-mode {
+    background: hsl(235, 24%, 19%);
+    color: white; /* Text color for dark mode */
+}
+
+.dark-mode .todo-list{
+    background: hsl(235, 24%, 19%);
+    color: white; 
+}
+.dark-mode .list-item:hover{
+    background: hsl(234, 27%, 15%);
+    color: white; /* Text color for dark mode */
+}
+.dark-mode .item-text{
+    color: beige;
+}
+.dark-mode .add-btn:hover{
+    background: hsl(234, 27%, 15%);
+    color: white; /* Text color for dark mode */
+}
+.filters {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 480px;
+    margin: 20px auto;
+  }
+  
+  .filter-btn,
+  .clear-btn {
+    background: hsl(240, 14%, 93%);
+    border: none;
+    border-radius: 5px;
+    padding: 8px 10px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: background 0.3s ease;
+  }
+
+ .dark-mode .filter-btn{
+    background: hsl(235, 37%, 28%);
+    color: white
+
+  }
+  .dark-mode .clear-btn{
+    background: hsl(235, 37%, 28%);
+    color: white
+
+  }
+  .dark-mode .filter-btn:hover{
+    background: hsl(240, 84%, 10%);
+  }
+  .clear-btn:hover {
+    background: hsl(240, 84%, 10%);
+  }
+  
+  .filter-btn:hover,
+  .clear-btn:hover {
+    background: hsl(240, 24%, 80%);
+  }
+  
+  /* Show the filter section when toggle button is clicked (using JavaScript) */
+  .filters.show {
+    display: block;
+  }
+  
+  /* Styling for the filter toggle button */
+  .filter-toggle-btn {
+    background-color: #fff;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 16px;
+    display: none; /* Hidden by default on desktop */
+  }
+
+@media (max-width: 768px) {
+    .todo-header {
+        width: 90%;
+        height: 25px;
+        margin-top: -40%;
+    }
+
+    .input-field {
+        padding: 7px 20px;
+        width: 100%; /* Ensure the input field takes up the full width of its container */
+    }
+
+    .input {
+        margin-left: auto; 
+        margin-right: auto; 
+        width: 90%; 
+        flex-direction: row; 
+        justify-content: center;
+        padding: 10px;
+    }
+
+    .todo-list {
+        width: 90%; /* Make the list responsive */
+        border-radius: 8px;
+        margin-top: 95px;
+        margin-left: auto; /* Center-align the list */
+        margin-right: auto; /* Center-align the list */
+        padding: 0;
+    }
+    
+    
+    .filter-btn,
+    .clear-btn {
+        width: 90%;
+        margin-top: 10px;
+        padding: 12px;
+    }
+}
+
+/* For smaller mobile screens */
+@media (max-width: 480px) {
+    .todo-header h1 {
+        font-size: 1.2rem;
+    }
+
+    .input-field {
+        font-size: 0.9rem;
+    }
+}
+@media (max-width: 600px) {
+    /* Show the toggle button on mobile */
+    .filter-toggle-btn {
+      display: block;
+      border-radius: 15px;
+    }
+    .filter-toggle-btn:hover{
+        background-color: #b8b6b6;
+
+    }
+
+  
+    /* Make the filters container appear when toggled */
+    .filters {
+      display: none; /* Hidden initially */
+      position: absolute;
+      top: 60px; /* Adjust position based on your design */
+      right: 10px;
+      background-color: #fff;
+      border-radius: 5px;
+      box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+      width: 40%; /* Adjust width as needed */
+      padding: 7px;
+      box-sizing: border-box;
+    }
+  
+    .filters.show {
+      display: block; /* Show the filters when toggled */
+    }
+  }
